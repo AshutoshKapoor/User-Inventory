@@ -320,6 +320,7 @@ function UserList(props) {
                     cardContent={() => cardContent(user, index)}
                   />
                 );
+              else return <></>;
             })}
           </>
         )}
