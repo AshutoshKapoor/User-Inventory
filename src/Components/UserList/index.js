@@ -19,6 +19,9 @@ function UserList(props) {
   const [userModalOpen, setUserModalOpen] = useState(false);
   const [userIndex, setUserIndex] = useState(0);
   const [modalOpenType, setModalOpenType] = useState("add");
+  const [currentPage, setCurrentPage] = useState(1);
+  const totalPages = Math.ceil(users.length / 6);
+  const pageArray = [...Array(totalPages).keys()].map((i) => i + 1);
 
   const modalContent = (type = modalOpenType, index) => {
     return (
@@ -303,23 +306,35 @@ function UserList(props) {
         {users.length > 0 && (
           <>
             {users.map((user, index) => {
-              return (
-                <Card
-                  header={user.name}
-                  dotColor={
-                    parseInt(user.age) < 25
-                      ? "#1A7318"
-                      : parseInt(user.age) < 50
-                      ? "#F41B9E"
-                      : "#FEA41D"
-                  }
-                  cardContent={() => cardContent(user, index)}
-                />
-              );
+              if (index > (currentPage - 1) * 6 - 1 && index < currentPage * 6)
+                return (
+                  <Card
+                    header={user.name}
+                    dotColor={
+                      parseInt(user.age) < 25
+                        ? "#1A7318"
+                        : parseInt(user.age) < 50
+                        ? "#F41B9E"
+                        : "#FEA41D"
+                    }
+                    cardContent={() => cardContent(user, index)}
+                  />
+                );
             })}
           </>
         )}
       </div>
+      {totalPages > 1 && (
+        <div className={s.footer}>
+          {pageArray.map((val) => {
+            return (
+              <div className={s.number} onClick={() => setCurrentPage(val)}>
+                {val}
+              </div>
+            );
+          })}
+        </div>
+      )}
       {userModalOpen && (
         <Modal modalContent={() => modalContent(modalOpenType, userIndex)} />
       )}
