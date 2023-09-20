@@ -1,5 +1,3 @@
-import s from "./button.module.scss";
-
 function Button(props) {
   const { buttonStyling, onClickHandler, buttonName } = props;
 

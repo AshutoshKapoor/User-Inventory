@@ -1,6 +1,5 @@
 import React from "react";
 import s from "./modal.module.scss";
-import Button from "../Button";
 
 function Modal(props) {
   const { modalContent } = props;

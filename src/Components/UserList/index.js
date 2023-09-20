@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import s from "./userlist.module.scss";
 import Button from "../Button";
 import Modal from "../Modal";
