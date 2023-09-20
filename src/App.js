@@ -1,24 +1,18 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import s from "./app.module.scss";
+import Header from "./Components/Header";
+import UserList from "./Components/UserList";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <div className={s.container}>
+        <div className={s.header}>
+          <Header name={"USER'S INVENTORY"} headerStyling={s.heading} />
+        </div>
+        <div><UserList /></div>
+      </div>
+    </>
   );
 }
 

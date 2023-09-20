@@ -1,0 +1,122 @@
+.container {
+  margin: 70px;
+  .header {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 40px;
+    .heading {
+      font-size: 28px;
+    }
+    .button {
+      margin-left: auto;
+      display: flex;
+      cursor: pointer;
+      .addUserButton {
+        background-color: #1677ff;
+        width: 150px;
+        color: white;
+        border-radius: 4px;
+        justify-content: center;
+        padding: 10px;
+      }
+    }
+  }
+  .body {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    grid-auto-rows: minmax(100px, auto);
+    .cardContainer {
+      padding: 10px;
+      border-bottom: 1px solid;
+      .row {
+        display: flex;
+        font-size: 14px;
+        .userInfo {
+          font-weight: 600;
+        }
+      }
+    }
+    .cardFooter {
+      display: flex;
+      justify-content: space-between;
+      padding:20px 15px;
+      .redButton {
+        cursor: pointer;
+        display: flex;
+        background-color: #f64f2a;
+        width: 100px;
+        color: white;
+        border-radius: 4px;
+        justify-content: center;
+        padding: 4px;
+      }
+      .blueButton {
+        cursor: pointer;
+        display: flex;
+        background-color: #1677ff;
+        width: 100px;
+        color: white;
+        border-radius: 4px;
+        justify-content: center;
+        padding: 4px;
+      }
+    }
+  }
+  .modalHeader {
+    font-size: 30px;
+    font-weight: 600;
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 30px;
+  }
+  .modalBody {
+    display: flex;
+    flex-direction: row;
+    .column {
+      width: 50%;
+      .row {
+        padding: 10px;
+        margin-bottom: 20px;
+        .heading {
+          font-size: 18px;
+        }
+        .input {
+          display: flex;
+          .checkbox {
+            margin: 0 10px;
+          }
+          textarea {
+            resize: none;
+          }
+        }
+      }
+    }
+  }
+  .modalFooter {
+    display: flex;
+    .cancelButton {
+      display: flex;
+      margin-left: auto;
+      cursor: pointer;
+      background-color: #f64f2a;
+      width: 120px;
+      color: white;
+      border-radius: 4px;
+      justify-content: center;
+      padding: 7px;
+    }
+    .submitButton {
+      display: flex;
+      cursor: pointer;
+      background-color: #1677ff;
+      width: 120px;
+      color: white;
+      border-radius: 4px;
+      justify-content: center;
+      padding: 7px;
+      margin-left: 10px;
+    }
+  }
+}
